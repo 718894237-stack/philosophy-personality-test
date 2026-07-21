@@ -148,7 +148,7 @@ button {
 
 .result-preview {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 18px;
   margin: 62px 0 38px;
 }
@@ -399,35 +399,35 @@ button {
 }
 
 .option-button.selected-primary {
-  border-color: #e7bd43;
-  background: #fff9df;
-  box-shadow: 0 0 0 2px rgba(231, 189, 67, 0.12);
+  border-color: #efd875;
+  background: #fffdf2;
+  box-shadow: 0 0 0 2px rgba(239, 216, 117, 0.1);
 }
 
 .option-button.selected-secondary {
-  border-color: #83cdbb;
-  background: #eefbf7;
-  box-shadow: 0 0 0 2px rgba(131, 205, 187, 0.12);
+  border-color: #b8d7f4;
+  background: #f4f9ff;
+  box-shadow: 0 0 0 2px rgba(184, 215, 244, 0.12);
 }
 
 .option-button.selected-primary .option-letter {
-  border-color: #e7bd43;
-  background: #fff1ae;
-  color: #725600;
+  border-color: #efd875;
+  background: #fff6cf;
+  color: #78651d;
 }
 
 .option-button.selected-secondary .option-letter {
-  border-color: #83cdbb;
-  background: #d8f5ed;
-  color: #236f60;
+  border-color: #b8d7f4;
+  background: #e7f2ff;
+  color: #3d6f99;
 }
 
 .option-button.selected-primary .option-rank {
-  color: #806000;
+  color: #78651d;
 }
 
 .option-button.selected-secondary .option-rank {
-  color: #2d7869;
+  color: #416f95;
 }
 
 .selection-hint {
