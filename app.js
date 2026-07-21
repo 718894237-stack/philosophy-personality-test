@@ -24,8 +24,8 @@ const typeProfiles = {
       { name: "斯宾诺莎", note: "把理解原因视为摆脱被动、获得自由的一条道路。" },
       { name: "黑格尔", note: "试图在矛盾与历史变化中把握整体结构。" }
     ],
-    accent: "#8a4f35",
-    tint: "rgba(138, 79, 53, 0.10)"
+    accent: "#3f6178",
+    tint: "rgba(63, 97, 120, 0.10)"
   },
   EX: {
     name: "经验探索者",
@@ -96,8 +96,8 @@ const typeProfiles = {
       { name: "西蒙娜·德·波伏娃", note: "讨论自由如何与他人的自由和具体处境相连。" },
       { name: "加缪", note: "在没有最终保证的世界里，仍选择清醒地生活和行动。" }
     ],
-    accent: "#a24e3b",
-    tint: "rgba(162, 78, 59, 0.10)"
+    accent: "#53658c",
+    tint: "rgba(83, 101, 140, 0.10)"
   },
   SB: {
     name: "自律守界者",
@@ -144,8 +144,8 @@ const typeProfiles = {
       { name: "约翰·罗尔斯", note: "从公平和基本自由出发思考制度正义。" },
       { name: "汉娜·阿伦特", note: "提醒个人不能把责任完全交给命令与体制。" }
     ],
-    accent: "#7b3d32",
-    tint: "rgba(123, 61, 50, 0.10)"
+    accent: "#445f78",
+    tint: "rgba(68, 95, 120, 0.10)"
   },
   CW: {
     name: "后果衡量者",
@@ -168,8 +168,8 @@ const typeProfiles = {
       { name: "约翰·斯图亚特·密尔", note: "在总体福祉之外，也认真捍卫个体自由。" },
       { name: "彼得·辛格", note: "把道德关注扩展到更远的人与更广的生命。" }
     ],
-    accent: "#9a6535",
-    tint: "rgba(154, 101, 53, 0.10)"
+    accent: "#6b7650",
+    tint: "rgba(107, 118, 80, 0.10)"
   },
   RR: {
     name: "关系回应者",
@@ -192,8 +192,8 @@ const typeProfiles = {
       { name: "列维纳斯", note: "从面对具体他者开始理解无法轻易推卸的责任。" },
       { name: "孔子", note: "把人格修养放在人与人的关系和日常实践中理解。" }
     ],
-    accent: "#9b5964",
-    tint: "rgba(155, 89, 100, 0.10)"
+    accent: "#6d5f82",
+    tint: "rgba(109, 95, 130, 0.10)"
   },
   SC: {
     name: "结构批判者",
@@ -244,7 +244,7 @@ const typeProfiles = {
     tint: "rgba(76, 85, 71, 0.10)"
   },
   AV: {
-    name: "生命审美者",
+    name: "寻美生活体验家",
     role: "不让正确的人生失去生命力",
     tagline: "你不只想把日子过得合理。爱、艺术、身体经验和创造，不是效率之外的装饰，而是生命本身的一部分。",
     question: "这样的生活即使合理，仍然鲜活吗？",
@@ -264,27 +264,27 @@ const typeProfiles = {
       { name: "柏格森", note: "强调流动的生命经验不能被静态概念完全穷尽。" },
       { name: "梅洛-庞蒂", note: "从身体经验出发理解人与世界的关系。" }
     ],
-    accent: "#a24f59",
-    tint: "rgba(162, 79, 89, 0.10)"
+    accent: "#4f7580",
+    tint: "rgba(79, 117, 128, 0.10)"
   },
   TM: {
-    name: "超越寻义者",
-    role: "让欲望接受更大意义的衡量",
-    tagline: "你不认为个人喜欢什么，就自动决定了什么值得。意义也可能来自继承、敬畏，以及对比自我更大之物的回应。",
-    question: "什么价值不应只由我当下的欲望决定？",
-    quote: "我不相信人的欲望本身就是最终尺度。",
+    name: "意义探索理想家",
+    role: "用长期理想校准眼前选择",
+    tagline: "你不认为眼前舒服或个人获利就是最终尺度。真正值得的生活，需要与长期理想、责任或比自我更大的意义连接。",
+    question: "这件事与我真正相信的意义相连吗？",
+    quote: "我想要的不只是一个可行选择，而是一个值得长期相信的方向。",
     worldview: [
-      "你对完全由个人选择制造意义的说法并不满足。人出生在语言、关系和传统之中，也会在自然、历史、宗教或共同体面前体验到敬畏。某些责任不是因为‘我喜欢’才成立，某些价值也不是由个人随意命名之后才存在；它们更像需要被发现、继承或回应的召唤。",
-      "这并不必然等于相信某一宗教。真正重要的是，你认为自我不应成为一切价值的最终法官。限制有时并非压迫，也可能帮助人离开即时欲望，进入更长的时间、更大的共同体和更深的意义。你愿意为无法立刻回报自己的事保留忠诚。"
+      "你不会只用眼前的舒适、收益或个人喜好判断一件事是否值得。你会追问：它是否连接着某个更长久的方向——也许是理想、责任、信仰、自然、家人，或一件你愿意长期服务的事情。意义对你来说不是漂亮口号，而是能在取舍时真正改变选择的尺度。",
+      "这并不等于必须相信某种宗教或传统。重要的是，你认为个人欲望不该成为一切价值的终点。有些事情即使没有即时回报，也值得忠诚；有些选择即使很成功，如果让人离真正相信的方向越来越远，仍会显得空洞。"
     ],
-    decision: "你通常先判断一个选择是否回应了传统、共同体、神圣性或超越个人得失的意义",
-    underPressure: "当世界失去方向时，你会回到长期信念、仪式、经典或共同记忆中寻找可以站立的位置。",
-    strengths: ["能让短期欲望接受长期意义和敬畏的限制。", "重视传承、共同体与代际责任，不只计算眼前得失。", "在个人目标崩塌时，仍可能保有更深的方向感。"],
-    blindspots: ["可能把历史形成的传统过早神圣化。", "权威可能借超越之名压制怀疑、退出和价值革新。", "个人真实的痛苦与欲望，容易被要求为宏大意义沉默。"],
-    secondaryGift: "它会带来敬畏、长期意义和超越个人得失的尺度",
-    prompts: ["我忠于的是更大的意义，还是某个借意义要求服从的权威？", "传统的精神是否可以保留，而它的形式仍允许改变？"],
+    decision: "你通常先判断一个选择是否符合长期理想，并让生活与某种超越眼前得失的意义保持连接",
+    underPressure: "当生活失去方向时，你会回到真正重视的人、长期信念或愿意服务的事情中，重新确认为什么继续。",
+    strengths: ["能用长期意义限制短期诱惑，不轻易被即时回报带走。", "愿意为理想、责任和无法立刻回报自己的事情保持投入。", "在个人目标受挫时，仍可能找到比成败更深的方向感。"],
+    blindspots: ["可能把理想抬得过高，忽视身体、资源和现实限度。", "容易因为寻找‘真正意义’而贬低普通但具体的快乐。", "某些权威可能借理想或使命之名，要求你长期牺牲自己。"],
+    secondaryGift: "它会带来长期理想、责任感和超越眼前得失的尺度",
+    prompts: ["这个理想真的由我相信，还是我害怕辜负别人？", "我能否让意义进入日常，而不是只在宏大目标里寻找它？"],
     thinkers: [
-      { name: "克尔凯郭尔", note: "讨论个体如何在不确定中回应信仰、责任与存在。" },
+      { name: "维克多·弗兰克尔", note: "在无法控制全部处境时，仍追问人如何以责任回应意义。" },
       { name: "西蒙娜·薇依", note: "把注意、苦难与超越自我的善联系起来。" },
       { name: "老子", note: "让个人意志退后，重新体会人与更大自然秩序的关系。" }
     ],
@@ -675,7 +675,7 @@ function loadProgress() {
 }
 
 function completedAnswerCount() {
-  return state.answers.filter((answer) => answer.primary && answer.secondary).length;
+  return state.answers.filter((answer) => answer.primary).length;
 }
 
 function renderQuestion() {
@@ -690,13 +690,13 @@ function renderQuestion() {
   elements.progressBar.style.width = `${percent}%`;
   elements.questionText.textContent = question.text;
   elements.backButton.disabled = state.current === 0;
-  elements.nextButton.disabled = !(answer.primary && answer.secondary);
+  elements.nextButton.disabled = !answer.primary;
   elements.nextButton.textContent = state.current === questions.length - 1 ? "查看结果" : "下一题";
 
   if (!answer.primary) {
-    elements.selectionHint.textContent = "请选择第一选择";
+    elements.selectionHint.textContent = "请选择最接近你的答案";
   } else if (!answer.secondary) {
-    elements.selectionHint.textContent = "很好，再选择一个次接近你的答案";
+    elements.selectionHint.textContent = "可以直接继续；如果还有一个接近的答案，也可以再选";
   } else {
     elements.selectionHint.textContent = "已完成本题，可以继续";
   }
@@ -1011,7 +1011,7 @@ elements.backButton.addEventListener("click", () => {
 
 elements.nextButton.addEventListener("click", () => {
   const answer = state.answers[state.current];
-  if (!(answer.primary && answer.secondary)) return;
+  if (!answer.primary) return;
 
   if (state.current === questions.length - 1) {
     const scores = calculateScores();
