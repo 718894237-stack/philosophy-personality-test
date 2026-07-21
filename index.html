@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="一个关于认识、选择、道德、社会与意义的哲学人格测试。24 道题，得到主导型、辅助型与核心哲学矛盾。"
+      content="一个从日常选择出发的哲学人格测试。18 道题，得到主导型、辅助型与核心哲学矛盾。"
     />
-    <meta name="theme-color" content="#f3eee4" />
+    <meta name="theme-color" content="#ffffff" />
     <title>你靠什么相信世界？｜哲学人格测试</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -23,7 +23,7 @@
 
       <main id="app" class="app" aria-live="polite">
         <section id="homeScreen" class="screen home-screen">
-          <div class="hero-kicker">24 个日常选择 · 约 8 分钟</div>
+          <div class="hero-kicker">18 个生活场景 · 约 5 分钟</div>
           <h1>当没有标准答案时，<br />你靠什么相信世界？</h1>
           <p class="hero-intro">
             这不是把你装进一个固定盒子的性格测试。它想看的，是当事实不够、价值冲突、每个选择都有代价时，
@@ -68,8 +68,8 @@
             <button id="quitButton" class="icon-button" type="button" aria-label="退出测试">×</button>
             <div class="progress-wrap" aria-label="答题进度">
               <div class="progress-meta">
-                <span id="progressText">第 1 / 24 题</span>
-                <span id="progressPercent">4%</span>
+                <span id="progressText">第 1 / 18 题</span>
+                <span id="progressPercent">6%</span>
               </div>
               <div class="progress-track">
                 <div id="progressBar" class="progress-bar"></div>
@@ -107,6 +107,7 @@
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="questions.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
