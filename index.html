@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="一个从日常选择出发的哲学人格测试。18 道题，得到主导型、辅助型与核心哲学矛盾。"
+      content="一个从生活选择出发的信念人格测试。18 道题，看看你最常依靠的判断方式，以及容易发生的价值拉扯。"
     />
     <meta name="theme-color" content="#ffffff" />
-    <title>你靠什么相信世界？｜哲学人格测试</title>
-    <link rel="stylesheet" href="styles.css?v=6" />
+    <title>你靠什么相信世界？｜信念人格测试</title>
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="./" aria-label="返回测试首页">
           <span class="brand-mark">φ</span>
-          <span>哲学人格测试</span>
+          <span>信念人格测试</span>
         </a>
         <div class="privacy-note">答案仅在你的设备上计算</div>
       </header>
@@ -26,25 +26,20 @@
           <div class="hero-kicker">18 个生活场景 · 约 5 分钟</div>
           <h1>当没有标准答案时，<br />你靠什么相信世界？</h1>
           <p class="hero-intro">
-            这不是把你装进一个固定盒子的性格测试。它想看的，是当事实不够、价值冲突、每个选择都有代价时，
-            你会先保护什么、怀疑什么，又愿意为什么承担责任。
+            当信息不全、不同价值互相冲突时，人往往会先抓住某一种判断依据。
+            结果包括你最常用和次常用的方式，以及两者容易发生冲突的地方。
           </p>
 
-          <div class="result-preview" aria-label="测试将提供三层结果">
+          <div class="result-preview" aria-label="测试结果预览">
             <article>
               <span class="preview-number">01</span>
-              <h2>主导哲学人格</h2>
-              <p>你最自然、最快调用的判断方式。</p>
+              <h2>主要与辅助倾向</h2>
+              <p>你最常依靠的判断方式，以及用来补充它的第二种方式。</p>
             </article>
             <article>
               <span class="preview-number">02</span>
-              <h2>辅助哲学人格</h2>
-              <p>帮助你补充或修正主导方式的第二套规则。</p>
-            </article>
-            <article>
-              <span class="preview-number">03</span>
-              <h2>核心哲学矛盾</h2>
-              <p>你同时相信、却无法轻易调和的两种价值。</p>
+              <h2>核心价值拉扯</h2>
+              <p>两种你都在意、却经常难以同时满足的价值。</p>
             </article>
           </div>
 
@@ -58,7 +53,7 @@
 
           <div class="home-footnote">
             <span>没有正确答案</span>
-            <span>不需要哲学知识</span>
+            <span>不需要专业知识</span>
             <span>结果可以随经历改变</span>
           </div>
         </section>
@@ -78,7 +73,7 @@
           </div>
 
           <div class="question-wrap">
-            <p class="question-hint">先选最接近你的，再选次接近你的</p>
+            <p class="question-hint">先选一个最接近的，再选一个次接近的</p>
             <h2 id="questionText" class="question-text"></h2>
             <div id="optionsList" class="options-list" role="group" aria-label="选项"></div>
             <p id="selectionHint" class="selection-hint">请选择第一选择</p>
@@ -102,12 +97,12 @@
       </main>
 
       <footer class="site-footer">
-        <p>这是一份探索性测试，不用于诊断、招聘或替代专业判断。</p>
+        <p>结果只反映你在这组题里的选择，不用于诊断、招聘或替代专业判断。</p>
       </footer>
     </div>
 
     <div id="toast" class="toast" role="status" aria-live="polite"></div>
-    <script src="questions.js?v=5"></script>
-    <script src="app.js?v=5"></script>
+    <script src="questions.js?v=7"></script>
+    <script src="app.js?v=7"></script>
   </body>
 </html>
