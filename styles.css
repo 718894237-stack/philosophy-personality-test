@@ -399,15 +399,35 @@ button {
 }
 
 .option-button.selected-primary {
-  border-color: var(--accent);
-  background: rgba(17, 17, 17, 0.06);
-  box-shadow: inset 3px 0 0 var(--accent);
+  border-color: #e7bd43;
+  background: #fff9df;
+  box-shadow: 0 0 0 2px rgba(231, 189, 67, 0.12);
 }
 
 .option-button.selected-secondary {
-  border-color: var(--olive);
-  background: rgba(83, 96, 74, 0.08);
-  box-shadow: inset 3px 0 0 var(--olive);
+  border-color: #83cdbb;
+  background: #eefbf7;
+  box-shadow: 0 0 0 2px rgba(131, 205, 187, 0.12);
+}
+
+.option-button.selected-primary .option-letter {
+  border-color: #e7bd43;
+  background: #fff1ae;
+  color: #725600;
+}
+
+.option-button.selected-secondary .option-letter {
+  border-color: #83cdbb;
+  background: #d8f5ed;
+  color: #236f60;
+}
+
+.option-button.selected-primary .option-rank {
+  color: #806000;
+}
+
+.option-button.selected-secondary .option-rank {
+  color: #2d7869;
 }
 
 .selection-hint {
