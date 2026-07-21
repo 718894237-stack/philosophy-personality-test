@@ -1,5 +1,6 @@
 const TYPE_ORDER = ["OB", "EX", "SK", "EC", "SB", "PG", "CW", "RR", "SC", "RP", "AV", "TM"];
 const TYPE_MAX_SCORE = 12;
+const SPECTRUM_COLORS = ["#f4dfa0", "#bfdcf2", "#c5e1c8", "#ddcfec"];
 const STORAGE_KEY = "belief-personality-progress-v2";
 
 const typeProfiles = {
@@ -810,14 +811,15 @@ function thinkerCards(profile) {
 
 function spectrumRows(scores) {
   return sortedCodes(scores)
-    .map((code) => {
+    .map((code, index) => {
       const profile = typeProfiles[code];
       const width = Math.round((scores[code] / TYPE_MAX_SCORE) * 100);
+      const spectrumColor = SPECTRUM_COLORS[index % SPECTRUM_COLORS.length];
       return `
         <div class="spectrum-row">
           <span class="spectrum-name">${profile.name}</span>
           <div class="spectrum-track" aria-label="${profile.name} ${scores[code]} 分">
-            <div class="spectrum-fill" style="width:${width}%; --type-accent:${profile.accent}"></div>
+            <div class="spectrum-fill" style="width:${width}%; --spectrum-color:${spectrumColor}"></div>
           </div>
           <span class="spectrum-score">${scores[code]}/${TYPE_MAX_SCORE}</span>
         </div>
