@@ -675,7 +675,7 @@ function loadProgress() {
 }
 
 function completedAnswerCount() {
-  return state.answers.filter((answer) => answer.primary).length;
+  return state.answers.filter((answer) => answer.primary && answer.secondary).length;
 }
 
 function renderQuestion() {
@@ -690,13 +690,13 @@ function renderQuestion() {
   elements.progressBar.style.width = `${percent}%`;
   elements.questionText.textContent = question.text;
   elements.backButton.disabled = state.current === 0;
-  elements.nextButton.disabled = !answer.primary;
+  elements.nextButton.disabled = !(answer.primary && answer.secondary);
   elements.nextButton.textContent = state.current === questions.length - 1 ? "查看结果" : "下一题";
 
   if (!answer.primary) {
-    elements.selectionHint.textContent = "请选择最接近你的答案";
+    elements.selectionHint.textContent = "请选择第一选择";
   } else if (!answer.secondary) {
-    elements.selectionHint.textContent = "可以直接继续；如果还有一个接近的答案，也可以再选";
+    elements.selectionHint.textContent = "再选择一个次接近你的答案";
   } else {
     elements.selectionHint.textContent = "已完成本题，可以继续";
   }
@@ -1011,7 +1011,7 @@ elements.backButton.addEventListener("click", () => {
 
 elements.nextButton.addEventListener("click", () => {
   const answer = state.answers[state.current];
-  if (!answer.primary) return;
+  if (!(answer.primary && answer.secondary)) return;
 
   if (state.current === questions.length - 1) {
     const scores = calculateScores();
