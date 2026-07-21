@@ -1,11 +1,11 @@
 :root {
-  --paper: #f3eee4;
-  --paper-deep: #e7dece;
+  --paper: #ffffff;
+  --paper-deep: #f3f3f0;
   --ink: #24221f;
   --ink-soft: #615c54;
   --line: rgba(36, 34, 31, 0.15);
   --line-strong: rgba(36, 34, 31, 0.28);
-  --white: rgba(255, 255, 255, 0.62);
+  --white: #ffffff;
   --accent: #a34b32;
   --accent-dark: #7b3322;
   --olive: #53604a;
@@ -27,22 +27,9 @@ body {
   margin: 0;
   min-width: 320px;
   color: var(--ink);
-  background:
-    radial-gradient(circle at 15% 0%, rgba(163, 75, 50, 0.09), transparent 34%),
-    radial-gradient(circle at 90% 20%, rgba(83, 96, 74, 0.1), transparent 30%),
-    linear-gradient(180deg, #f7f3eb 0%, var(--paper) 45%, #eee7da 100%);
+  background: #ffffff;
   font-family: "Songti SC", "Noto Serif CJK SC", STSong, "Times New Roman", serif;
   -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  pointer-events: none;
-  content: "";
-  opacity: 0.22;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.08'/%3E%3C/svg%3E");
 }
 
 button,
