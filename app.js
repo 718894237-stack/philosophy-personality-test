@@ -1,6 +1,6 @@
 const TYPE_ORDER = ["OB", "EX", "SK", "EC", "SB", "PG", "CW", "RR", "SC", "RP", "AV", "TM"];
 const TYPE_MAX_SCORE = 12;
-const STORAGE_KEY = "philosophy-personality-progress-v1";
+const STORAGE_KEY = "belief-personality-progress-v2";
 
 const typeProfiles = {
   OB: {
@@ -244,17 +244,17 @@ const typeProfiles = {
     tint: "rgba(76, 85, 71, 0.10)"
   },
   AV: {
-    name: "寻美生活体验家",
-    role: "不让正确的人生失去生命力",
-    tagline: "你不只想把日子过得合理。爱、艺术、身体经验和创造，不是效率之外的装饰，而是生命本身的一部分。",
-    question: "这样的生活即使合理，仍然鲜活吗？",
-    quote: "我不只想活得合理，我还想活得真实而有生命力。",
+    name: "生命感受者",
+    role: "保护感受力、创造和生命质感",
+    tagline: "合理、高效、稳定都很重要，但一段缺少感受、爱与创造的生活，很难让你觉得真正值得。",
+    question: "这样的生活还有感受、创造和生命力吗？",
+    quote: "我希望日子不只正确，也有感受、有创造。",
     worldview: [
-      "你对被安排得过于整齐的人生会产生警觉。一个人可以高效、稳定、符合所有标准，却逐渐失去感受、惊奇和创造的能力；在你看来，这并不能算完整的成功。生命的价值不只在于避免错误，也在于有没有真正经历、表达、爱过和创造过。",
-      "你相信有些真理无法通过概念完全抵达。身体知道的、艺术唤起的、关系中突然发生的改变，可能比一套正确理论更接近一个人的真实处境。你愿意保护无用之用，也愿意为不易衡量的美、尊严和生命质感留下空间。"
+      "你很在意生活有没有真实的感受。工作稳定、安排周全、效率很高，都不能代替兴趣、爱、身体的舒展和创造欲。若日子长期只剩下‘应该做什么’，你会明显感觉自己正在枯萎。",
+      "有时，人先被一段音乐、一次旅行、一场谈话或某种身体经验打动，之后才慢慢明白发生了什么。对你来说，这些经验不是生活的装饰；它们会直接改变一个人怎样理解自己和世界。"
     ],
-    decision: "你通常先感受一个选择是否保留了真实、创造和生命质感，而不是只看它是否安全高效",
-    underPressure: "当生活被规则和责任压缩时，你会更想打破惯性，通过表达、体验或变化重新确认自己仍然活着。",
+    decision: "你会留意一个选择是否让生活保有感受和创造空间，也会警惕只剩安全与效率的方案",
+    underPressure: "日子越机械，你越想换个环境、做点创作，或给自己一次真正期待的体验。",
     strengths: ["能发现效率和正确背后被牺牲的生命质感。", "对艺术、身体、情感与创造性经验保持开放。", "能给僵硬系统带来想象、表达和新的生活可能。"],
     blindspots: ["可能把强烈体验误认为更真实，把稳定误认为没有生命。", "容易美化痛苦、冲动与自我消耗。", "追求鲜活时，可能低估承诺、结构和长期后果。"],
     secondaryGift: "它会带来感受力、创造性和对不可量化生命价值的保护",
@@ -837,8 +837,8 @@ function renderResult(scores) {
   const tensionLeft = typeProfiles[tension.codes[0]];
   const tensionRight = typeProfiles[tension.codes[1]];
   const closeResult = scores[primaryCode] - scores[secondaryCode] <= 2;
-  const titlePrefix = closeResult ? "你的双主导型" : "你的主导型";
-  const tensionLabel = tension.confirmed ? "你的核心哲学矛盾" : "你可能反复遇到的哲学张力";
+  const titlePrefix = closeResult ? "你最常用的两种方式" : "你最常用的方式";
+  const tensionLabel = tension.confirmed ? "你的核心价值拉扯" : "你可能遇到的价值拉扯";
 
   document.documentElement.style.setProperty("--type-accent", primary.accent);
   document.documentElement.style.setProperty("--type-tint", primary.tint);
@@ -853,19 +853,19 @@ function renderResult(scores) {
 
     <div class="result-summary-grid">
       <article class="summary-card">
-        <span class="type-chip">主导型 · ${scores[primaryCode]}/${TYPE_MAX_SCORE}</span>
+        <span class="type-chip">主要倾向 · ${scores[primaryCode]}/${TYPE_MAX_SCORE}</span>
         <h2>${primary.name}</h2>
-        <p>${primary.role}。面对混乱时，${primary.decision}。</p>
+        <p>${primary.role}。${primary.decision}。</p>
       </article>
       <article class="summary-card">
-        <span class="type-chip">辅助型 · ${scores[secondaryCode]}/${TYPE_MAX_SCORE}</span>
+        <span class="type-chip">辅助倾向 · ${scores[secondaryCode]}/${TYPE_MAX_SCORE}</span>
         <h2>${secondary.name}</h2>
-        <p>${secondary.secondaryGift}，让你的主导方式不至于只沿着一条路走到底。</p>
+        <p>${secondary.secondaryGift}。</p>
       </article>
     </div>
 
     <section class="result-section">
-      <p class="section-kicker">第一层 · 你最先相信什么</p>
+      <p class="section-kicker">第一部分 · 做判断时</p>
       <h2>${primary.question}</h2>
       <p>${primary.worldview[0]}</p>
       <p>${primary.worldview[1]}</p>
@@ -875,33 +875,31 @@ function renderResult(scores) {
 
     <section class="result-section two-column">
       <div>
-        <p class="section-kicker">第二层 · 这种方式的力量</p>
-        <h2>你带来的东西</h2>
+        <p class="section-kicker">第二部分 · 擅长的地方</p>
+        <h2>这套方式的优势</h2>
         <ul>${primary.strengths.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
       <div>
-        <p class="section-kicker">第三层 · 容易卡住的地方</p>
-        <h2>当它使用过度</h2>
+        <p class="section-kicker">第三部分 · 需要留意</p>
+        <h2>这套方式的盲点</h2>
         <ul>${primary.blindspots.map((item) => `<li>${item}</li>`).join("")}</ul>
       </div>
     </section>
 
     <section class="result-section">
-      <p class="section-kicker">第四层 · 你的辅助人格</p>
+      <p class="section-kicker">第四部分 · 另一种常用方式</p>
       <h2>${primary.name} × ${secondary.name}</h2>
       <p>
-        你通常先从“${primary.question}”开始判断；但你并不只靠这一套规则。
-        ${secondary.name}会继续追问“${secondary.question}”。${secondary.secondaryGift}。
-        这意味着你的副型不是另一个标签，而是一种修正力量：当${primary.name}走得太远时，它会提醒你，还有另一部分现实不能被省略。
+        遇到问题时，你通常先问“${primary.question}”。随后，${secondary.name}会把注意力带到另一个问题：“${secondary.question}”
+        ${secondary.secondaryGift}。
       </p>
       <p>
-        两者配合得好时，你既保留${primary.name}的清晰方向，也不会忽视${secondary.name}所保护的价值。
-        配合得不好时，你可能先按主型作出决定，事后又被副型追问，出现反复、迟疑或补偿性的改变。
+        两种方式方向一致时，你通常很快就能确定选择。方向相反时，你可能先作出决定，过后又想修改；这种反复往往就来自两边都舍不得放下。
       </p>
     </section>
 
     <section class="result-section">
-      <p class="section-kicker">第五层 · ${tensionLabel}</p>
+      <p class="section-kicker">第五部分 · ${tensionLabel}</p>
       <h2>${tension.title}</h2>
       <div class="tension-band">
         <div class="tension-side"><strong>${tensionLeft.name}</strong></div>
@@ -913,27 +911,25 @@ function renderResult(scores) {
     </section>
 
     <section class="result-section">
-      <p class="section-kicker">思想参照 · 不是名人配对</p>
-      <h2>你可能会与这些思想产生共鸣</h2>
+      <p class="section-kicker">延伸阅读</p>
+      <h2>这些人讨论过相近的问题</h2>
       <p>
-        下面的人物不是“和你同一种人格”的结论，而是他们的部分作品，曾认真处理过与你的主导型相近的问题。
-        你可能认同其中一部分，也可能在阅读后更清楚地反对它。
+        如果你想继续看下去，可以从下面几位人物开始。他们不等于你的测试类型，只是提供不同的思考入口。
       </p>
       <div class="thinker-list">${thinkerCards(primary)}</div>
-      <p class="fine-print">哲学谱系只用于提供阅读入口，不表示这些人物在所有问题上观点一致，也不表示测试能够判断历史人物的人格。</p>
+      <p class="fine-print">这里只列阅读线索，不表示这些人物在所有问题上观点一致。</p>
     </section>
 
     <section class="result-section">
-      <p class="section-kicker">最后 · 两个值得慢慢想的问题</p>
-      <h2>不急着回答</h2>
+      <h2>给自己的两个问题</h2>
       <p class="reflection-question">${primary.prompts[0]}</p>
       <p class="reflection-question">${primary.prompts[1]}</p>
     </section>
 
     <section class="spectrum-card">
       <p class="section-kicker">完整光谱</p>
-      <h2>你的十二种哲学人格得分</h2>
-      <p class="fine-print">分数表示你在这组题里优先调用某种规则的频率。低分不是缺陷，也不表示你反对这种价值。</p>
+      <h2>你的 12 种判断方式得分</h2>
+      <p class="fine-print">分数表示你在这组题里优先调用某种规则的频率。低分不表示你反对这种价值。前几名只差 1—2 分时，组合比名次更值得看。</p>
       <div class="spectrum-list">${spectrumRows(scores)}</div>
     </section>
   `;
@@ -954,8 +950,8 @@ async function shareResult() {
   const primaryCode = sortedCodes(currentResultScores)[0];
   const primary = typeProfiles[primaryCode];
   const shareData = {
-    title: `我的哲学人格：${primary.name}`,
-    text: `我的主导哲学人格是「${primary.name}」。你在没有标准答案时，会先相信什么？`,
+    title: `我的信念人格结果：${primary.name}`,
+    text: `我最常用的判断方式是「${primary.name}」。你在没有标准答案时，会先相信什么？`,
     url: window.location.href
   };
 
