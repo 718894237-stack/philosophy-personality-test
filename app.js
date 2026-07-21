@@ -1,4 +1,5 @@
 const TYPE_ORDER = ["OB", "EX", "SK", "EC", "SB", "PG", "CW", "RR", "SC", "RP", "AV", "TM"];
+const TYPE_MAX_SCORE = 12;
 const STORAGE_KEY = "philosophy-personality-progress-v1";
 
 const typeProfiles = {
@@ -292,7 +293,7 @@ const typeProfiles = {
   }
 };
 
-const questions = [
+const archivedQuestionsV1 = [
   {
     text: "朋友工作稳定，却越来越不开心，想突然辞职。你会先提醒他什么？",
     options: [
@@ -764,8 +765,8 @@ function findTension(scores) {
   return tensionLibrary
     .map((tension) => {
       const [left, right] = tension.codes;
-      const leftIndex = (scores[left] / 16) * 100;
-      const rightIndex = (scores[right] / 16) * 100;
+      const leftIndex = (scores[left] / TYPE_MAX_SCORE) * 100;
+      const rightIndex = (scores[right] / TYPE_MAX_SCORE) * 100;
       return {
         ...tension,
         strength: Math.min(leftIndex, rightIndex) - 0.5 * Math.abs(leftIndex - rightIndex),
@@ -785,7 +786,7 @@ function decodeScores(hash) {
   if (!hash.startsWith("#result=")) return null;
   try {
     const values = atob(hash.slice(8)).split(",").map(Number);
-    if (values.length !== TYPE_ORDER.length || values.some((value) => !Number.isInteger(value) || value < 0 || value > 16)) {
+    if (values.length !== TYPE_ORDER.length || values.some((value) => !Number.isInteger(value) || value < 0 || value > TYPE_MAX_SCORE)) {
       return null;
     }
     return Object.fromEntries(TYPE_ORDER.map((code, index) => [code, values[index]]));
@@ -811,14 +812,14 @@ function spectrumRows(scores) {
   return sortedCodes(scores)
     .map((code) => {
       const profile = typeProfiles[code];
-      const width = Math.round((scores[code] / 16) * 100);
+      const width = Math.round((scores[code] / TYPE_MAX_SCORE) * 100);
       return `
         <div class="spectrum-row">
           <span class="spectrum-name">${profile.name}</span>
           <div class="spectrum-track" aria-label="${profile.name} ${scores[code]} 分">
             <div class="spectrum-fill" style="width:${width}%; --type-accent:${profile.accent}"></div>
           </div>
-          <span class="spectrum-score">${scores[code]}/16</span>
+          <span class="spectrum-score">${scores[code]}/${TYPE_MAX_SCORE}</span>
         </div>
       `;
     })
@@ -852,12 +853,12 @@ function renderResult(scores) {
 
     <div class="result-summary-grid">
       <article class="summary-card">
-        <span class="type-chip">主导型 · ${scores[primaryCode]}/16</span>
+        <span class="type-chip">主导型 · ${scores[primaryCode]}/${TYPE_MAX_SCORE}</span>
         <h2>${primary.name}</h2>
         <p>${primary.role}。面对混乱时，${primary.decision}。</p>
       </article>
       <article class="summary-card">
-        <span class="type-chip">辅助型 · ${scores[secondaryCode]}/16</span>
+        <span class="type-chip">辅助型 · ${scores[secondaryCode]}/${TYPE_MAX_SCORE}</span>
         <h2>${secondary.name}</h2>
         <p>${secondary.secondaryGift}，让你的主导方式不至于只沿着一条路走到底。</p>
       </article>
