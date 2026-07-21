@@ -453,7 +453,7 @@ button {
 .result-hero {
   position: relative;
   overflow: hidden;
-  padding: clamp(32px, 6vw, 68px);
+  padding: clamp(30px, 4.5vw, 52px);
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   background:
@@ -481,7 +481,7 @@ button {
 .result-title {
   max-width: 760px;
   margin: 0;
-  font-size: clamp(42px, 8vw, 82px);
+  font-size: clamp(38px, 5vw, 58px);
   font-weight: 600;
   letter-spacing: -0.05em;
   line-height: 1.06;
@@ -489,10 +489,10 @@ button {
 
 .result-tagline {
   max-width: 680px;
-  margin: 26px 0 0;
+  margin: 22px 0 0;
   color: var(--ink-soft);
-  font-size: clamp(17px, 2.3vw, 22px);
-  line-height: 1.85;
+  font-size: clamp(16px, 1.6vw, 19px);
+  line-height: 1.8;
 }
 
 .result-summary-grid {
@@ -518,7 +518,7 @@ button {
 .result-section h2,
 .spectrum-card h2 {
   margin: 8px 0 14px;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 650;
 }
 
@@ -526,8 +526,8 @@ button {
 .result-section p,
 .result-section li {
   color: #303030;
-  font-size: 16px;
-  line-height: 1.9;
+  font-size: 15px;
+  line-height: 1.85;
 }
 
 .summary-card p {
@@ -575,11 +575,11 @@ button {
 }
 
 .quote-block {
-  margin: 28px 0 0;
-  padding: 24px 26px;
+  margin: 24px 0 0;
+  padding: 20px 22px;
   border-left: 3px solid var(--type-accent, var(--accent));
   background: rgba(255, 255, 255, 0.42);
-  font-size: 20px;
+  font-size: 18px;
   line-height: 1.7;
 }
 
@@ -645,7 +645,7 @@ button {
   border-radius: var(--radius-sm);
   color: var(--ink) !important;
   background: rgba(83, 96, 74, 0.09);
-  font-size: 18px !important;
+  font-size: 16px !important;
 }
 
 .spectrum-list {
@@ -682,7 +682,7 @@ button {
 .spectrum-fill {
   height: 100%;
   border-radius: inherit;
-  background: var(--type-accent, var(--accent));
+  background: var(--spectrum-color, #bfdcf2);
 }
 
 .result-actions {
