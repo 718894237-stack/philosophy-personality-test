@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="一个关于认识、选择、道德、社会与意义的哲学人格测试。24 道题，得到主导型、辅助型与核心哲学矛盾。"
+    />
+    <meta name="theme-color" content="#f3eee4" />
+    <title>你靠什么相信世界？｜哲学人格测试</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="./" aria-label="返回测试首页">
+          <span class="brand-mark">φ</span>
+          <span>哲学人格测试</span>
+        </a>
+        <div class="privacy-note">答案仅在你的设备上计算</div>
+      </header>
+
+      <main id="app" class="app" aria-live="polite">
+        <section id="homeScreen" class="screen home-screen">
+          <div class="hero-kicker">24 个日常选择 · 约 8 分钟</div>
+          <h1>当没有标准答案时，<br />你靠什么相信世界？</h1>
+          <p class="hero-intro">
+            这不是把你装进一个固定盒子的性格测试。它想看的，是当事实不够、价值冲突、每个选择都有代价时，
+            你会先保护什么、怀疑什么，又愿意为什么承担责任。
+          </p>
+
+          <div class="result-preview" aria-label="测试将提供三层结果">
+            <article>
+              <span class="preview-number">01</span>
+              <h2>主导哲学人格</h2>
+              <p>你最自然、最快调用的判断方式。</p>
+            </article>
+            <article>
+              <span class="preview-number">02</span>
+              <h2>辅助哲学人格</h2>
+              <p>帮助你补充或修正主导方式的第二套规则。</p>
+            </article>
+            <article>
+              <span class="preview-number">03</span>
+              <h2>核心哲学矛盾</h2>
+              <p>你同时相信、却无法轻易调和的两种价值。</p>
+            </article>
+          </div>
+
+          <div class="home-actions">
+            <button id="startButton" class="primary-button" type="button">
+              开始测试
+              <span aria-hidden="true">→</span>
+            </button>
+            <button id="resumeButton" class="text-button hidden" type="button">继续上次作答</button>
+          </div>
+
+          <div class="home-footnote">
+            <span>没有正确答案</span>
+            <span>不需要哲学知识</span>
+            <span>结果可以随经历改变</span>
+          </div>
+        </section>
+
+        <section id="quizScreen" class="screen quiz-screen hidden">
+          <div class="quiz-topline">
+            <button id="quitButton" class="icon-button" type="button" aria-label="退出测试">×</button>
+            <div class="progress-wrap" aria-label="答题进度">
+              <div class="progress-meta">
+                <span id="progressText">第 1 / 24 题</span>
+                <span id="progressPercent">4%</span>
+              </div>
+              <div class="progress-track">
+                <div id="progressBar" class="progress-bar"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="question-wrap">
+            <p class="question-hint">先选最接近你的，再选次接近你的</p>
+            <h2 id="questionText" class="question-text"></h2>
+            <div id="optionsList" class="options-list" role="group" aria-label="选项"></div>
+            <p id="selectionHint" class="selection-hint">请选择第一选择</p>
+          </div>
+
+          <div class="quiz-actions">
+            <button id="backButton" class="secondary-button" type="button">上一题</button>
+            <button id="resetSelectionButton" class="text-button" type="button">重选本题</button>
+            <button id="nextButton" class="primary-button compact" type="button" disabled>下一题</button>
+          </div>
+        </section>
+
+        <section id="resultScreen" class="screen result-screen hidden">
+          <div id="resultContent"></div>
+          <div class="result-actions no-print">
+            <button id="shareButton" class="primary-button" type="button">分享结果</button>
+            <button id="printButton" class="secondary-button" type="button">保存 / 打印</button>
+            <button id="restartButton" class="text-button" type="button">重新测试</button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>这是一份探索性测试，不用于诊断、招聘或替代专业判断。</p>
+      </footer>
+    </div>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
