@@ -1,13 +1,13 @@
 :root {
   --paper: #ffffff;
   --paper-deep: #f3f3f0;
-  --ink: #24221f;
-  --ink-soft: #615c54;
+  --ink: #111111;
+  --ink-soft: #3f3f3f;
   --line: rgba(36, 34, 31, 0.15);
   --line-strong: rgba(36, 34, 31, 0.28);
   --white: #ffffff;
-  --accent: #3f647d;
-  --accent-dark: #294b63;
+  --accent: #111111;
+  --accent-dark: #000000;
   --olive: #53604a;
   --shadow: 0 24px 80px rgba(63, 48, 31, 0.1);
   --radius-lg: 28px;
@@ -400,7 +400,7 @@ button {
 
 .option-button.selected-primary {
   border-color: var(--accent);
-  background: rgba(163, 75, 50, 0.08);
+  background: rgba(17, 17, 17, 0.06);
   box-shadow: inset 3px 0 0 var(--accent);
 }
 
@@ -438,7 +438,7 @@ button {
   border-radius: var(--radius-lg);
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.24)),
-    var(--type-tint, rgba(163, 75, 50, 0.06));
+    var(--type-tint, rgba(17, 17, 17, 0.04));
   box-shadow: var(--shadow);
 }
 
@@ -505,7 +505,7 @@ button {
 .summary-card p,
 .result-section p,
 .result-section li {
-  color: #4d4943;
+  color: #303030;
   font-size: 16px;
   line-height: 1.9;
 }
